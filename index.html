@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/index.css" />
+    <title>Talk</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="title">
+          <img src="https://img.icons8.com/nolan/64/weixing.png" />
+          <h1>We CHAT</h1>
+        </div>
+        <button type="button" onclick="show_hide()">
+          <img
+            src="https://img.icons8.com/ios-filled/50/null/conference-call.png"
+          />
+        </button>
+      </header>
+
+      <div class="container">
+        <div class="users-window">
+          <div class="users-head">
+            <h3>People</h3>
+            <h4 class="users-count">0</h4>
+          </div>
+          <div class="users-list"></div>
+        </div>
+        <div class="chat-window">
+          <div class="chats"></div>
+
+          <div class="users-input">
+            <input
+              id="user-msg"
+              type="text"
+              placeholder="Type your message...."
+            />
+            <button type="button" id="user-send">
+              <img src="https://img.icons8.com/nolan/64/filled-sent.png" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      var uwindow = document.querySelector(".users-window");
+
+      function show_hide() {
+        if (uwindow.style.display == "block") {
+          uwindow.style.display = "none";
+        } else {
+          uwindow.style.display = "block";
+        }
+      }
+    </script>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/client.js"></script>
+  </body>
+</html>
